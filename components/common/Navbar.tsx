@@ -2,9 +2,13 @@ import { BiMenu } from "react-icons/bi"
 import { HiX } from "react-icons/hi"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import OutsideClickHandler from "react-outside-click-handler"
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
+	const [isProductActive, setIsProductActive] = useState(false)
+	const [isCompanyActive, setIsCompanyActive] = useState(false)
+	const [isLanguageActive, setIsLanguageActive] = useState(false)
 	return (
 		<>
 			<div className="bg-white border border-bottom-secondary w-full h-20 hidden md:block">
@@ -14,41 +18,83 @@ const Navbar = () => {
 							<img src="/logo.svg" />
 						</div>
 						<ul className="flex items-center space-x-8">
-							<li className="relative flex items-center space-x-3 py-[10px] px-[18px] rounded cursor-pointer group hover:bg-secondary">
-								<span className="text-small group-hover:text-primary  text-dark">
-									Products
-								</span>{" "}
-								<img
-									src="/icons/chevron-down.svg"
-									alt=""
-									className="h-[6px] w-[10.9px] mt-1 group-hover:hidden"
-								/>
-								<img
-									src="/icons/chevron-up-blue.svg"
-									alt=""
-									className="h-[6px] w-[10.9px] mt-1 hidden group-hover:block"
-								/>
-								<div className="opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto bg-white transition-all delay-200 z-50 absolute -left-2 top-[50px] shadow-custom border border-secondary rounded-[10px] px-8 pt-4 pb-12">
-									<ProductHoverView />
+							<li className="relative">
+								<div
+									className={`flex items-center space-x-3 py-[10px] px-[18px] rounded cursor-pointer hover:bg-secondary group ${isProductActive && 'pointer-events-none bg-secondary'}`}
+									onClick={() =>  setIsProductActive(true)}
+								>
+									<span
+										className={`text-small ${
+											isProductActive ? "text-primary" : "text-dark"
+										}`}
+									>
+										Products
+									</span>{" "}
+									{isProductActive ? (
+										<img
+											src="/icons/chevron-up-blue.svg"
+											alt=""
+											className="h-[6px] w-[10.9px] mt-1 "
+										/>
+									) : (
+										<img
+											src="/icons/chevron-down.svg"
+											alt=""
+											className="h-[6px] w-[10.9px] mt-1 "
+										/>
+									)}
 								</div>
+								{isProductActive && (
+									<OutsideClickHandler
+										onOutsideClick={() => {
+											setIsProductActive(false)
+										}}
+									>
+										{/* This component is in this same page below */}
+										<div className=" bg-white transition-all delay-200 z-50 absolute -left-2 top-[50px] shadow-custom border border-secondary rounded-[10px] px-8 pt-4 pb-12">
+											<ProductHoverView /> 
+										</div>
+									</OutsideClickHandler>
+								)}
 							</li>
-							<li className="relative flex items-center space-x-3 py-[10px] px-[18px] rounded cursor-pointer group hover:bg-secondary">
-								<span className="text-small group-hover:text-primary  text-dark">
-									Company
-								</span>{" "}
-								<img
-									src="/icons/chevron-down.svg"
-									alt=""
-									className="h-[6px] w-[10.9px] mt-1 group-hover:hidden"
-								/>
-								<img
-									src="/icons/chevron-up-blue.svg"
-									alt=""
-									className="h-[6px] w-[10.9px] mt-1 hidden group-hover:block"
-								/>
-								<div className="opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all delay-200 bg-white  z-50 absolute -left-2 top-[50px] shadow-custom border border-secondary rounded-[10px] px-8 pt-4 pb-8">
-									<CompanyHoverView />
+							<li className="relative ">
+								<div
+									className={`flex items-center space-x-3 py-[10px] px-[18px] rounded cursor-pointer hover:bg-secondary ${isCompanyActive && 'pointer-events-none bg-secondary'}`}
+									onClick={() => setIsCompanyActive(true)}
+								>
+									<span
+										className={`text-small ${
+											isCompanyActive ? "text-primary" : "text-dark"
+										} `}
+									>
+										Company
+									</span>{" "}
+									{isCompanyActive ? (
+										<img
+											src="/icons/chevron-up-blue.svg"
+											alt=""
+											className="h-[6px] w-[10.9px] mt-1 "
+										/>
+									) : (
+										<img
+											src="/icons/chevron-down.svg"
+											alt=""
+											className="h-[6px] w-[10.9px] mt-1"
+										/>
+									)}
 								</div>
+								{isCompanyActive && (
+									<OutsideClickHandler
+										onOutsideClick={() => {
+											setIsCompanyActive(false)
+										}}
+									>
+										{/* This component is in this same page below */}
+										<div className=" transition-all delay-200 bg-white  z-50 absolute -left-2 top-[50px] shadow-custom border border-secondary rounded-[10px] px-8 pt-4 pb-8">
+											<CompanyHoverView />
+										</div>
+									</OutsideClickHandler>
+								)}
 							</li>
 							<li className="flex items-center space-x-3 py-[10px] px-[18px] rounded cursor-pointer group hover:bg-secondary">
 								<span className="text-small group-hover:text-primary  text-dark">
@@ -58,23 +104,33 @@ const Navbar = () => {
 						</ul>
 					</div>
 					<div className="flex items-center space-x-[13px]">
-						<button className="secondary-btn">
-							Contact
-						</button>
-						<button className="primary-btn">
-							Sign In
-						</button>
-						<div className="relative flex items-center space-x-3 cursor-pointer group">
-							<span className="text-small text-dark ">English</span>{" "}
-							<img
-								src="/icons/chevron-down.svg"
-								alt=""
-								className="h-[6px] w-[10.9px]  mt-1"
-							/>
-							<div className="opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all delay-200 bg-white  z-50 absolute right-0 w-[266px] top-[40px] shadow-custom border border-secondary rounded-[10px] px-6 pb-6 pt-2">
-								<p className="mb-4">Language</p>
-								<LanguageSelect />
+						<button className="secondary-btn">Contact</button>
+						<button className="primary-btn">Sign In</button>
+						<div className="relative ">
+							<div
+								className={`flex items-center space-x-3 cursor-pointer group ${isLanguageActive && 'pointer-events-none'}` }
+								onClick={() => setIsLanguageActive(true)}
+							>
+								<span className="text-small text-dark ">English</span>{" "}
+								<img
+									src="/icons/chevron-down.svg"
+									alt=""
+									className="h-[6px] w-[10.9px]  mt-1"
+								/>
 							</div>
+							<OutsideClickHandler
+								onOutsideClick={() => {
+									setIsLanguageActive(false)
+								}}
+							>
+								{isLanguageActive && (
+									<div className=" transition-all delay-200 bg-white  z-50 absolute right-0 w-[266px] top-[40px] shadow-custom border border-secondary rounded-[10px] px-6 pb-6 pt-2">
+										<p className="mb-4">Language</p>
+										{/* This component is in this same page below */}
+										<LanguageSelect />
+									</div>
+								)}
+							</OutsideClickHandler>
 						</div>
 					</div>
 				</div>
@@ -230,7 +286,7 @@ const NavMenu = ({
 	image,
 	title,
 	subTitle,
-	type
+	type,
 }: {
 	image: string
 	title: string
@@ -244,30 +300,36 @@ const NavMenu = ({
 			</div>
 			<div className="">
 				<p className="text-[18px] text-dark">{title}</p>
-				{type==='company'? <span className="flex items-center mt-2 space-x-[22px] "><span className="text-xs">Learn more</span> <img
-									src="/icons/chevron-down.svg"
-									alt=""
-									className="h-[6px] w-[10.9px]  transform -rotate-[90deg]"
-								/></span>: <span className="text-xs text-dark">{subTitle}</span>}
-				
+				{type === "company" ? (
+					<span className="flex items-center mt-2 space-x-[22px] ">
+						<span className="text-xs">Learn more</span>{" "}
+						<img
+							src="/icons/chevron-down.svg"
+							alt=""
+							className="h-[6px] w-[10.9px]  transform -rotate-[90deg]"
+						/>
+					</span>
+				) : (
+					<span className="text-xs text-dark">{subTitle}</span>
+				)}
 			</div>
 		</div>
 	)
 }
 
 const LanguageSelect = () => {
-	return(
+	return (
 		<div className="flex items-center justify-between bg-secondary pl-3 pr-6 py-2">
-											<div className="flex items-center space-x-4">
-												<img src="/icons/uk-flag.png" alt="" />
-												<p>English</p>
-											</div>
-											<img
-												src="/icons/chevron-down.svg"
-												alt=""
-												className="h-[6px] w-[10.9px]  mt-1"
-											/>
-										</div>
+			<div className="flex items-center space-x-4">
+				<img src="/icons/uk-flag.png" alt="" />
+				<p>English</p>
+			</div>
+			<img
+				src="/icons/chevron-down.svg"
+				alt=""
+				className="h-[6px] w-[10.9px]  mt-1"
+			/>
+		</div>
 	)
 }
 
