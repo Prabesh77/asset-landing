@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <div className="bg-dark pt-20 pb-10">
         <div className="container mx-auto flex flex-col space-y-16 md:space-y-0 md:flex-row md:space-x-[14%] px-[22px] md:px-0 items-start justify-between">
-            <div className="w-full md:w-[10%]">
+            <div className="w-full md:w-[10%] min-w-[100px] ">
                 <img src="/images/chain_white_logo.svg" alt=""/>
-                <span className="text-muted">©2022 Chain</span>
+                <span className="text-muted ">©2022 Chain</span>
             </div>
             <div className="flex space-x-[110px] md:justify-between items-start w-full md:w-[45%]">
                 <ul className="flex flex-col space-y-1">

@@ -16,6 +16,9 @@ h1, h2, p {
 .secondary-btn {
   @apply border-none bg-secondary py-[7px] px-[16px] md:py-[10px] md:px-[30px] text-small rounded text-dark cursor-pointer ;
 }
+.container {
+  @apply max-w-[1300px] mx-auto;
+}
 
 
 @layer base {

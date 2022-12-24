@@ -20,7 +20,7 @@ const Card = ({image, tag, title, date, link}: CardProps) => {
 									{title}
 								</h2>
 								<p className="mt-[20px] mb-[60px]">{date}</p>
-								<Link href={link}><button className="primary-btn">Learn more</button></Link>
+								<Link href={link}><button className="primary-btn">Read more</button></Link>
 							</div>
 						</div>
   )
