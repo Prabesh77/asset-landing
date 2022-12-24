@@ -31,14 +31,14 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="flex space-x-[90px] md:justify-between items-start w-full md:w-[45%]">
-                <ul className="flex flex-col space-y-1">
+                <ul className="flex flex-col space-y-1 ">
                     <li className="text-muted font-small mb-[10px]"><Link href="#">COMMUNITY</Link></li>
-                    <Link href="#"><li className="text-muted font-small flex items-center space-x-[10px]"><AiOutlineMedium /> <span>Blog</span></li></Link>
-                    <Link href="#"><li className="text-muted font-small flex items-center space-x-[10px]"><AiFillGithub /><span>Github</span></li></Link>
-                    <Link href="#"><li className="text-muted font-small flex items-center space-x-[10px]"><AiOutlineTwitter /><span>Twitter</span></li></Link>
-                    <Link href="#"><li className="text-muted font-small flex items-center space-x-[10px]"><AiOutlineInstagram /><span>Instagram</span></li></Link>
-                    <Link href="#"><li className="text-muted font-small flex items-center space-x-[10px]"><FaTelegramPlane /><span>Telegram</span></li></Link>
-                    <Link href="#"><li className="text-muted font-small flex items-center space-x-[10px]"><FaDiscord /><span>Discord</span></li></Link>
+                    <Link href="#"><li className="text-muted font-small flex items-center space-x-[10px]"><AiOutlineMedium  /> <span >Blog</span></li></Link>
+                    <Link href="#"><li className="text-muted font-small flex items-center space-x-[10px]"><AiFillGithub  /><span >Github</span></li></Link>
+                    <Link href="#"><li className="text-muted font-small flex items-center space-x-[10px]"><AiOutlineTwitter  /><span >Twitter</span></li></Link>
+                    <Link href="#"><li className="text-muted font-small flex items-center space-x-[10px]"><AiOutlineInstagram  /><span >Instagram</span></li></Link>
+                    <Link href="#"><li className="text-muted font-small flex items-center space-x-[10px]"><FaTelegramPlane  /><span >Telegram</span></li></Link>
+                    <Link href="#"><li className="text-muted font-small flex items-center space-x-[10px]"><FaDiscord  /><span >Discord</span></li></Link>
                 </ul>
                 <ul className="flex flex-col space-y-1">
                     <li className="text-muted font-small mb-[10px]"><Link href="#">DEVELOPERS</Link></li>

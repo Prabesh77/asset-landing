@@ -23,6 +23,10 @@ module.exports = {
       },
       boxShadow: {
         'custom': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+        'custom1': '0 3px 50px 0 rgba(0, 0, 0, 0.08)'
+      },
+      gridTemplateColumns: {
+        'responsive': 'repeat(auto-fill, minmax(100, 1fr))'
       }
     },
   },

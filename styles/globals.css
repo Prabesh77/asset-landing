@@ -4,13 +4,17 @@
 
 * {
   @apply font-nitti;
+  /* @apply text-dark; */
+}
+h1, h2, p {
+  @apply text-dark;
 }
 
 .primary-btn {
-  @apply border-none bg-primary py-[10px] px-[30px] text-small rounded text-secondary cursor-pointer ;
+  @apply border-none bg-primary py-[7px] px-[16px] md:py-[10px] md:px-[30px] text-small rounded text-secondary cursor-pointer ;
 }
 .secondary-btn {
-  @apply border-none bg-secondary py-[10px] px-[30px] text-small rounded text-dark cursor-pointer ;
+  @apply border-none bg-secondary py-[7px] px-[16px] md:py-[10px] md:px-[30px] text-small rounded text-dark cursor-pointer ;
 }
 
 

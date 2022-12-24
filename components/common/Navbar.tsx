@@ -163,7 +163,7 @@ const Navbar = () => {
 								initial={{ y: -60, opacity: 0 }}
 								animate={{ y: 0, opacity: 1, transition: { duration: 0.2 } }}
 								exit={{ y: -50, opacity: 0, transition: { duration: 0.2 } }}
-								className={`px-4 py-10 -z-10 `}
+								className={`px-4 py-10 z-10 bg-white  `}
 							>
 								<div className="flex flex-col space-y-6">
 									<button className="border-none max-h-[42px] bg-secondary py-[10px] px-[30px] text-small rounded text-dark cursor-pointer  w-full">

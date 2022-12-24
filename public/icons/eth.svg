@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47">
+    <defs>
+        <clipPath id="r9o72fqtda">
+            <path data-name="Rectangle 158" transform="translate(0 .461)" style="fill:none" d="M0 0h47v47H0z"/>
+        </clipPath>
+        <clipPath id="neqxgfbmmb">
+            <path data-name="Rectangle 148" style="fill:none" d="M0 0h21.627v11.309H0z"/>
+        </clipPath>
+        <clipPath id="283ecvnomc">
+            <path data-name="Rectangle 150" style="fill:none" d="M0 0h10.816v24.335H0z"/>
+        </clipPath>
+        <clipPath id="zv2i9e228d">
+            <path data-name="Rectangle 154" style="fill:none" d="M0 0h10.816v15.237H0z"/>
+        </clipPath>
+        <clipPath id="epczwfppte">
+            <path data-name="Rectangle 156" style="fill:none" d="M0 0h10.82v15.237H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="Group 508">
+        <g data-name="Group 134" transform="translate(0 -.461)" style="clip-path:url(#r9o72fqtda)">
+            <g data-name="Group 133">
+                <g data-name="Group 132" style="clip-path:url(#r9o72fqtda)">
+                    <path data-name="Path 323" d="M46.431 23.217A23.215 23.215 0 1 1 23.216 0a23.215 23.215 0 0 1 23.215 23.217" transform="translate(0 -.001)" style="fill:#e0e0e0"/>
+                    <g data-name="Group 111" style="opacity:.6">
+                        <g data-name="Group 110">
+                            <g data-name="Group 109" style="clip-path:url(#neqxgfbmmb)" transform="translate(12.398 18.626)">
+                                <g data-name="Group 108">
+                                    <g data-name="Group 107" style="clip-path:url(#neqxgfbmmb)">
+                                        <path data-name="Path 324" d="m158.585 222-10.816 4.919 10.816 6.39 10.811-6.39z" transform="translate(-147.769 -222.005)" style="fill:#010101"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Group 116" style="opacity:.45">
+                        <g data-name="Group 115">
+                            <g data-name="Group 114" style="clip-path:url(#283ecvnomc)" transform="translate(12.398 5.6)">
+                                <g data-name="Group 113">
+                                    <g data-name="Group 112" style="clip-path:url(#283ecvnomc)">
+                                        <path data-name="Path 325" d="m147.769 84.69 10.816 6.39V66.745z" transform="translate(-147.769 -66.745)" style="fill:#010101"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Group 121" style="opacity:.8">
+                        <g data-name="Group 120">
+                            <g data-name="Group 119" style="clip-path:url(#283ecvnomc)" transform="translate(23.213 5.6)">
+                                <g data-name="Group 118">
+                                    <g data-name="Group 117" style="clip-path:url(#283ecvnomc)">
+                                        <path data-name="Path 326" d="M276.68 66.744V91.08l10.811-6.39z" transform="translate(-276.68 -66.744)" style="fill:#010101"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Group 126" style="opacity:.45">
+                        <g data-name="Group 125">
+                            <g data-name="Group 124" style="clip-path:url(#zv2i9e228d)" transform="translate(12.398 25.594)">
+                                <g data-name="Group 123">
+                                    <g data-name="Group 122" style="clip-path:url(#zv2i9e228d)">
+                                        <path data-name="Path 327" d="m147.769 305.057 10.816 15.237v-8.847z" transform="translate(-147.769 -305.057)" style="fill:#010101"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g data-name="Group 131" style="opacity:.8">
+                        <g data-name="Group 130">
+                            <g data-name="Group 129" style="clip-path:url(#epczwfppte)" transform="translate(23.213 25.594)">
+                                <g data-name="Group 128">
+                                    <g data-name="Group 127" style="clip-path:url(#epczwfppte)">
+                                        <path data-name="Path 328" d="M276.68 311.447v8.847l10.82-15.237z" transform="translate(-276.68 -305.057)" style="fill:#010101"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
