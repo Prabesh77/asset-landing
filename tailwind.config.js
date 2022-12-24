@@ -25,7 +25,8 @@ module.exports = {
         'custom': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
         'custom1': '0 3px 50px 0 rgba(0, 0, 0, 0.08)',
         'custom3': '0 3px 20px 0 rgba(0, 0, 0, 0.16)',
-        'custom4': '0 3px 50px 0 rgba(0, 0, 0, 0.1)'
+        'custom4': '0 3px 50px 0 rgba(0, 0, 0, 0.1)',
+        'custom5': '0 3px 20px 0 rgba(0, 0, 0, 0.06)'
       },
       gridTemplateColumns: {
         'responsive': 'repeat(auto-fill, minmax(100, 1fr))'
