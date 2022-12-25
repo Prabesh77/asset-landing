@@ -3,25 +3,32 @@ import { HiX } from "react-icons/hi"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import OutsideClickHandler from "react-outside-click-handler"
+import Link from "next/link"
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 	const [isProductActive, setIsProductActive] = useState(false)
 	const [isCompanyActive, setIsCompanyActive] = useState(false)
 	const [isLanguageActive, setIsLanguageActive] = useState(false)
+	const [isLanguageDropdownActive, setIsLanguageDropdownActive] =
+		useState(false)
 	return (
 		<>
 			<div className="bg-white border border-bottom-secondary w-full h-20 hidden md:block">
 				<div className="container mx-auto flex items-center justify-between h-full">
 					<div className="flex items-center space-x-20">
 						<div>
+							<Link href="/">
 							<img src="/logo.svg" />
+							</Link>
 						</div>
 						<ul className="flex items-center space-x-8">
 							<li className="relative">
 								<div
-									className={`flex items-center space-x-3 py-[10px] px-[18px] rounded cursor-pointer hover:bg-secondary group ${isProductActive && 'pointer-events-none bg-secondary'}`}
-									onClick={() =>  setIsProductActive(true)}
+									className={`flex items-center space-x-3 py-[10px] px-[18px] rounded cursor-pointer hover:bg-secondary group ${
+										isProductActive && "pointer-events-none bg-secondary"
+									}`}
+									onClick={() => setIsProductActive(true)}
 								>
 									<span
 										className={`text-small ${
@@ -52,14 +59,16 @@ const Navbar = () => {
 									>
 										{/* This component is in this same page below */}
 										<div className=" bg-white transition-all delay-200 z-50 absolute -left-2 top-[50px] shadow-custom border border-secondary rounded-[10px] px-8 pt-4 pb-12">
-											<ProductHoverView /> 
+											<ProductHoverView />
 										</div>
 									</OutsideClickHandler>
 								)}
 							</li>
 							<li className="relative ">
 								<div
-									className={`flex items-center space-x-3 py-[10px] px-[18px] rounded cursor-pointer hover:bg-secondary ${isCompanyActive && 'pointer-events-none bg-secondary'}`}
+									className={`flex items-center space-x-3 py-[10px] px-[18px] rounded cursor-pointer hover:bg-secondary ${
+										isCompanyActive && "pointer-events-none bg-secondary"
+									}`}
 									onClick={() => setIsCompanyActive(true)}
 								>
 									<span
@@ -108,7 +117,9 @@ const Navbar = () => {
 						<button className="primary-btn">Sign In</button>
 						<div className="relative ">
 							<div
-								className={`flex items-center space-x-3 cursor-pointer group ${isLanguageActive && 'pointer-events-none'}` }
+								className={`flex items-center space-x-3 cursor-pointer group ${
+									isLanguageActive && "pointer-events-none"
+								}`}
 								onClick={() => setIsLanguageActive(true)}
 							>
 								<span className="text-small text-dark ">English</span>{" "}
@@ -127,7 +138,29 @@ const Navbar = () => {
 									<div className=" transition-all delay-200 bg-white  z-50 absolute right-0 w-[266px] top-[40px] shadow-custom border border-secondary rounded-[10px] px-6 pb-6 pt-2">
 										<p className="mb-4">Language</p>
 										{/* This component is in this same page below */}
-										<LanguageSelect />
+										<LanguageSelect
+											onClick={() =>
+												setIsLanguageDropdownActive(!isLanguageDropdownActive)
+											}
+										/>
+										<OutsideClickHandler
+											onOutsideClick={() => {
+												setIsLanguageDropdownActive(false)
+											}}
+										>
+											{isLanguageDropdownActive && (
+												<div className="w-full overflow-y-scroll h-48 bg-red-500 no-scrollbar border-t border-[]#eaeaea]">
+													<LanguageSelect />
+													<LanguageSelect />
+													<LanguageSelect />
+													<LanguageSelect />
+													<LanguageSelect />
+													<LanguageSelect />
+													<LanguageSelect />
+													<LanguageSelect />
+												</div>
+											)}
+										</OutsideClickHandler>
 									</div>
 								)}
 							</OutsideClickHandler>
@@ -185,21 +218,25 @@ const Navbar = () => {
 											image="/icons/cloud.svg"
 											title="Cloud"
 											subTitle="Blockchain RPC API/WS & Dedicated Nodes"
+											link="/cloud"
 										/>
 										<NavMenu
 											image="/icons/nft.svg"
 											title="NFT"
 											subTitle="NFT-as-a-Service for Mints & Marketplaces"
+											link="/nft"
 										/>
 										<NavMenu
 											image="/icons/sequence.svg"
 											title="Sequence"
 											subTitle="Ledger Infrastructure for Developers"
+											link="/sequence"
 										/>
 										<NavMenu
 											image="/icons/wallet.svg"
 											title="Wallet"
 											subTitle="Self-custody Web3 Wallet"
+											link="/wallet"
 										/>
 									</div>
 								</div>
@@ -217,30 +254,35 @@ const Navbar = () => {
 											title="About Us"
 											subTitle="Blockchain RPC API/WS & Dedicated Nodes"
 											type="company"
+											link="/about"
 										/>
 										<NavMenu
 											image="/icons/nft.svg"
 											title="Careers"
 											subTitle="NFT-as-a-Service for Mints & Marketplaces"
 											type="company"
+											link="/join-us"
 										/>
 										<NavMenu
 											image="/icons/chain_gives.svg"
 											title="Chain Gives"
 											subTitle="Ledger Infrastructure for Developers"
 											type="company"
+											link="/gives"
 										/>
 										<NavMenu
 											image="/icons/press.svg"
 											title="Press"
 											subTitle="Self-custody Web3 Wallet"
 											type="company"
+											link="/press"
 										/>
 										<NavMenu
 											image="/icons/contact.svg"
 											title="Contact"
 											subTitle="Self-custody Web3 Wallet"
 											type="company"
+											link="/contact"
 										/>
 										<NavMenu
 											image="/icons/docs.svg"
@@ -270,7 +312,29 @@ const Navbar = () => {
 												className="h-[6px] w-[10.9px]  mt-1"
 											/>
 										</div> */}
-										<LanguageSelect />
+										<LanguageSelect
+											onClick={() =>
+												setIsLanguageDropdownActive(!isLanguageDropdownActive)
+											}
+										/>
+										<OutsideClickHandler
+											onOutsideClick={() => {
+												setIsLanguageDropdownActive(false)
+											}}
+										>
+											{isLanguageDropdownActive && (
+												<div className="w-full overflow-y-scroll h-48 bg-red-500 no-scrollbar border-t border-[]#eaeaea]">
+													<LanguageSelect />
+													<LanguageSelect />
+													<LanguageSelect />
+													<LanguageSelect />
+													<LanguageSelect />
+													<LanguageSelect />
+													<LanguageSelect />
+													<LanguageSelect />
+												</div>
+											)}
+										</OutsideClickHandler>
 									</div>
 								</div>
 							</motion.div>
@@ -287,13 +351,16 @@ const NavMenu = ({
 	title,
 	subTitle,
 	type,
+	link
 }: {
 	image: string
 	title: string
 	subTitle: string
 	type?: string
+	link?: string
 }) => {
 	return (
+		<Link href={link || '#'}>
 		<div className="flex space-x-8">
 			<div className="bg-secondary p-2 flex items-center justify-center rounded h-[60px] w-[60px]">
 				<img src={image} alt="" />
@@ -314,12 +381,16 @@ const NavMenu = ({
 				)}
 			</div>
 		</div>
+		</Link>
 	)
 }
 
-const LanguageSelect = () => {
+const LanguageSelect = ({ ...props }) => {
 	return (
-		<div className="flex items-center justify-between bg-secondary pl-3 pr-6 py-2">
+		<div
+			className="flex items-center justify-between bg-secondary pl-3 pr-6 py-2 cursor-pointer"
+			{...props}
+		>
 			<div className="flex items-center space-x-4">
 				<img src="/icons/uk-flag.png" alt="" />
 				<p>English</p>
@@ -348,21 +419,25 @@ const ProductHoverView = () => {
 							image="/icons/cloud.svg"
 							title="Cloud"
 							subTitle="Blockchain RPC API/WS & Dedicated Nodes"
+							link="/cloud"
 						/>
 						<NavMenu
 							image="/icons/nft.svg"
 							title="NFT"
 							subTitle="NFT-as-a-Service for Mints & Marketplaces"
+							link="/nft"
 						/>
 						<NavMenu
 							image="/icons/sequence.svg"
 							title="Sequence"
 							subTitle="Ledger Infrastructure for Developers"
+							link="/sequence"
 						/>
 						<NavMenu
 							image="/icons/wallet.svg"
 							title="Wallet"
 							subTitle="Self-custody Web3 Wallet"
+							link="/wallet"
 						/>
 					</div>
 				</div>
@@ -394,30 +469,35 @@ const CompanyHoverView = () => {
 							title="About Us"
 							subTitle="Blockchain RPC API/WS & Dedicated Nodes"
 							type="company"
+							link="/about"
 						/>
 						<NavMenu
 							image="/icons/nft.svg"
 							title="Careers"
 							subTitle="NFT-as-a-Service for Mints & Marketplaces"
 							type="company"
+							link="/join-us"
 						/>
 						<NavMenu
 							image="/icons/chain_gives.svg"
 							title="Chain Gives"
 							subTitle="Ledger Infrastructure for Developers"
 							type="company"
+							link="/gives"
 						/>
 						<NavMenu
 							image="/icons/press.svg"
 							title="Press"
 							subTitle="Self-custody Web3 Wallet"
 							type="company"
+							link="/press"
 						/>
 						<NavMenu
 							image="/icons/contact.svg"
 							title="Contact"
 							subTitle="Self-custody Web3 Wallet"
 							type="company"
+							link="/contact"
 						/>
 						{/* <NavMenu
 							image="/icons/docs.svg"

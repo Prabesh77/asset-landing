@@ -34,4 +34,27 @@ h1, h2, p {
     font-style: normal;
     src: url('/fonts/Nitti Grotesk font/Nitti Grotesk Bold.otf') format('truetype');    
   }
+  @font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype');    
+  }
+  @font-face {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-style: normal;
+    src: url('/fonts/Roboto/Roboto-Medium.ttf') format('truetype');    
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
