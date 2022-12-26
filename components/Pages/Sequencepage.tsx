@@ -1,8 +1,44 @@
 import Link from "next/link"
 import MainLayout from "../layout/MainLayout"
-import { BsDot } from 'react-icons/bs'
+import { BsDot } from "react-icons/bs"
 
 const Sequencepage = () => {
+	const systems = [
+		{
+			icon: "/icons/cryptographic-integrity.svg",
+			title: "Cryptographic Integrity",
+			content: "Atomic and signed transactions form immutable history.",
+		},
+		{
+			icon: "/icons/extensibility.svg",
+			title: "Extensibility",
+			content:
+				"Easily add accounts, asset types, contracts, keys, and entities to your ledger.",
+		},
+		{
+			icon: "/icons/programable.svg",
+			title: "Programmable Transactions",
+			content:
+				"Control assets with business logic executed by the Sequence VM.",
+		},
+		{
+			icon: "/icons/performant.svg",
+			title: "Performant",
+			content: "High throughput and low latency for enterprise-scale.",
+		},
+		{
+			icon: "/icons/analytics.svg",
+			title: "Analytics",
+			content:
+				"Parquet integration, customized reports, and summary analytics.",
+		},
+		{
+			icon: "/icons/developer-experience.svg",
+			title: "Developer Experience",
+			content:
+				"SDKs in several languages, detailed docs, and easy-to-use dashboards.",
+		},
+	]
 	return (
 		<MainLayout>
 			<div className="py-16">
@@ -25,7 +61,11 @@ const Sequencepage = () => {
 						</div>
 					</div>
 					<div className="h-full flex items-center justify-center md:justify-end w-full md:w-1/2 ">
-						<img src="/images/sequence-cover-3.png" alt="" className="" />
+						<img
+							src="/images/sequence-cover-3.png"
+							alt=""
+							className="scale-125"
+						/>
 					</div>
 				</div>
 			</div>
@@ -132,21 +172,20 @@ const Sequencepage = () => {
 					</h1>
 					<div className="shadow-custom1 w-full p-[1rem] md:p-[45px] rounded-lg bg-white">
 						<div className="grid md:grid-cols-5 grid-cols-2 items-center place-items-center gap-8">
-							<div className=" w-[140px] md:w-[175px] border-2 border-[#eaeaea] hover:border-2 hover:border-primary cursor-pointer text-center py-3 rounded-[7px]">
-								<p>Create Keys</p>
-							</div>
-							<div className=" w-[140px] md:w-[175px] border-2 border-[#eaeaea] hover:border-2 hover:border-primary cursor-pointer text-center py-3 rounded-[7px]">
-								<p>Create Accounts</p>
-							</div>
-							<div className=" w-[140px] md:w-[175px] border-2 border-[#eaeaea] hover:border-2 hover:border-primary cursor-pointer text-center py-3 rounded-[7px]">
-								<p>Create Assets</p>
-							</div>
-							<div className=" w-[140px] md:w-[175px] border-2 border-[#eaeaea] hover:border-2 hover:border-primary cursor-pointer text-center py-3 rounded-[7px]">
-								<p>Transact</p>
-							</div>
-							<div className=" w-[140px] md:w-[175px] border-2 border-[#eaeaea] hover:border-2 hover:border-primary cursor-pointer text-center py-3 rounded-[7px]">
-								<p>Query</p>
-							</div>
+							{[
+								"Create Keys",
+								"Create Accounts",
+								"Create Assets",
+								"Transact",
+								"Query",
+							].map((item, i) => (
+								<div
+									key={i}
+									className=" w-[140px] md:w-[175px] border-2 border-[#eaeaea] hover:border-2 hover:border-primary cursor-pointer text-center py-3 rounded-[7px]"
+								>
+									<p>{item}</p>
+								</div>
+							))}
 						</div>
 						<div className="flex flex-col md:flex-row space-y-8 md:space-y-0 mt-8 md:space-x-[20%] items-center">
 							<div className=" w-full md:w-1/3">
@@ -160,53 +199,52 @@ const Sequencepage = () => {
 								<img src="/images/code_sc_2.png" alt="" />
 							</div>
 						</div>
-                        <div className="flex items-center justify-center mt-8">
-                            <p className="text-primary">Java</p>
-                            <BsDot />
-                            <p>Node</p>
-                            <BsDot />
-                            <p>Ruby</p>
-                        </div>
+						<div className="flex items-center justify-center mt-8">
+							<p className="text-primary">Java</p>
+							<BsDot />
+							<p>Node</p>
+							<BsDot />
+							<p>Ruby</p>
+						</div>
 					</div>
-                    <div className="flex items-center justify-center mt-12">
-                    <button className="primary-btn">View Documentation</button>
-                    </div>
+					<div className="flex items-center justify-center mt-12">
+						<button className="primary-btn">View Documentation</button>
+					</div>
 				</div>
 			</div>
-            {/* ---------------------------------------------------------------------------------------------------- */}
-            <div className="py-24">
-                <div className="container">
-                    <h1 className="text-dark text-[25px] md:text-[30px] mb-16 font-bold text-center">A Powerful System of Record</h1>
-                    <div className="grid grid-cols-1 place-items-center md:grid-cols-3 gap-8">
-                        <SystemCard icon="/icons/cryptographic-integrity.svg" title="Cryptographic Integrity" content="Atomic and signed transactions form immutable history."/>
-                        <SystemCard icon="/icons/extensibility.svg" title="Extensibility" content="Easily add accounts, asset types, contracts, 
-keys, and entities to your ledger."/>
-                        <SystemCard icon="/icons/programable.svg" title="Programmable 
-Transactions" content="Control assets with business logic 
-executed by the Sequence VM."/>
-                        <SystemCard icon="/icons/performant.svg" title="Performant" content="High throughput and low latency for 
-enterprise-scale."/>
-                        <SystemCard icon="/icons/analytics.svg" title="Analytics" content="Parquet integration, customized reports, 
-and summary analytics."/>
-                        <SystemCard icon="/icons/developer-experience.svg" title="Developer Experience" content="SDKs in several languages, detailed docs, 
-and easy-to-use dashboards."/>
-
-                    </div>
-                </div>
-            </div>
-            {/* -------------------------------------------------------------------------------- */}
-            <div className=" md:pt-20 pb-20">
-                <div className="container">
-                    <h1 className="text-dark text-[25px] md:text-[30px] mb-16 font-bold text-center">Get Started</h1>
-                    <div className="flex space-x-2 mt-12 justify-center items-center">
-							<button className="primary-btn">Sign Up for Sequence</button>
-							<button className="secondary-btn">Documentation</button>
-						</div>
-                        <div className="mt-20 px-2 md:px-0">
-                            <img src="/images/seq_showcase.png" alt=""/>
-                        </div>
-                </div>
-            </div>
+			{/* ---------------------------------------------------------------------------------------------------- */}
+			<div className="py-24">
+				<div className="container">
+					<h1 className="text-dark text-[25px] md:text-[30px] mb-16 font-bold text-center">
+						A Powerful System of Record
+					</h1>
+					<div className="grid grid-cols-1 place-items-center md:grid-cols-3 gap-8">
+						{systems?.map((system, i) => (
+							<SystemCard
+								key={i}
+								icon={system.icon}
+								title={system.title}
+								content={system.content}
+							/>
+						))}
+					</div>
+				</div>
+			</div>
+			{/* -------------------------------------------------------------------------------- */}
+			<div className=" md:pt-20 pb-20">
+				<div className="container">
+					<h1 className="text-dark text-[25px] md:text-[30px] mb-16 font-bold text-center">
+						Get Started
+					</h1>
+					<div className="flex space-x-2 mt-12 justify-center items-center">
+						<button className="primary-btn">Sign Up for Sequence</button>
+						<button className="secondary-btn">Documentation</button>
+					</div>
+					<div className="mt-20 px-2 md:px-0">
+						<img src="/images/seq_showcase.png" alt="" />
+					</div>
+				</div>
+			</div>
 		</MainLayout>
 	)
 }
@@ -236,20 +274,28 @@ const FeatureCard = ({
 	)
 }
 
-const SystemCard = ({icon, title, content}: {icon: string, title: string, content: string}) => {
-    return(
-        <div className="h-[256px] w-[351px] bg-white shadow-custom4 rounded-[7px] overflow-hidden">
-                            <div className="h-[111px] bg-dark flex items-center space-x-4  p-[35px]">
-                                <div className="bg-[#2f2f2f] h-[42px] w-[61px] flex items-center justify-center rounded">
-                                    <img src={icon} alt=""/>
-                                </div>
-                                <h1 className="text-[20px] font-bold text-secondary">{title}</h1>
-                            </div>
-                            <div className="px-[35px] py-[25px]">
-                                <p>{content}</p>
-                            </div>
-                        </div>
-    )
+const SystemCard = ({
+	icon,
+	title,
+	content,
+}: {
+	icon: string
+	title: string
+	content: string
+}) => {
+	return (
+		<div className="h-[256px] w-[351px] bg-white shadow-custom4 rounded-[7px] overflow-hidden">
+			<div className="h-[111px] bg-dark flex items-center space-x-4  p-[35px]">
+				<div className="bg-[#2f2f2f] h-[42px] w-[61px] flex items-center justify-center rounded">
+					<img src={icon} alt="" />
+				</div>
+				<h1 className="text-[20px] font-bold text-secondary">{title}</h1>
+			</div>
+			<div className="px-[35px] py-[25px]">
+				<p>{content}</p>
+			</div>
+		</div>
+	)
 }
 
 export default Sequencepage

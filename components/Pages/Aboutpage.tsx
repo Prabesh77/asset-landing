@@ -1,8 +1,18 @@
 import Link from "next/link"
-import Card from "../common/Card"
+import ChainBanner from "../common/ChainBanner"
 import MainLayout from "../layout/MainLayout"
 
 const Aboutpage = () => {
+	const logos = [
+		"tag-heuer.svg",
+		"jacob.svg",
+		"visa.png",
+		"nasdaq.png",
+		"citi.png",
+		"capital-one.png",
+		"fiserv.png",
+		"state-street.png",
+	]
 	return (
 		<MainLayout>
 			<div className="py-16">
@@ -66,33 +76,11 @@ const Aboutpage = () => {
 					</h1>
 					<div className="bg-white w-full mt-16 md:px-[35px] px-[1rem] py-16 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-16 rounded-xl">
 						<div className="w-full md:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-8">
-							<div className="h-[55px] max-w-[149px] border border-[#eaeaea] hover:border-primary flex items-center justify-center rounded-[7px]">
-								<img src="/logos/tiffany.svg" alt="" />
-							</div>
-							<div className="h-[55px] max-w-[149px] px-2 border border-[#eaeaea] hover:border-primary flex items-center justify-center rounded-[7px]">
-								<img src="/logos/tag-heuer.svg" alt="" />
-							</div>
-							<div className="h-[55px] max-w-[149px] px-2 border border-[#eaeaea] hover:border-primary flex items-center justify-center rounded-[7px]">
-								<img src="/logos/jacob.svg" alt="" />
-							</div>
-							<div className="h-[55px] max-w-[149px] px-2 border border-[#eaeaea] hover:border-primary flex items-center justify-center rounded-[7px]">
-								<img src="/logos/visa.png" alt="" />
-							</div>
-							<div className="h-[55px] max-w-[149px] px-2 border border-[#eaeaea] hover:border-primary flex items-center justify-center rounded-[7px]">
-								<img src="/logos/nasdaq.png" alt="" />
-							</div>
-							<div className="h-[55px] max-w-[149px] px-2 border border-[#eaeaea] hover:border-primary flex items-center justify-center rounded-[7px]">
-								<img src="/logos/citi.png" alt="" />
-							</div>
-							<div className="h-[55px] max-w-[149px] px-2 border border-[#eaeaea] hover:border-primary flex items-center justify-center rounded-[7px]">
-								<img src="/logos/capital-one.png" alt="" />
-							</div>
-							<div className="h-[55px] max-w-[149px] px-2 border border-[#eaeaea] hover:border-primary flex items-center justify-center rounded-[7px]">
-								<img src="/logos/fiserv.png" alt="" />
-							</div>
-							<div className="h-[55px] max-w-[149px] px-2 border border-[#eaeaea] hover:border-primary flex items-center justify-center rounded-[7px]">
-								<img src="/logos/state-street.png" alt="" />
-							</div>
+							{logos?.map((logo) => (
+								<div className="h-[55px] max-w-[149px] border border-[#eaeaea] hover:border-primary flex items-center justify-center rounded-[7px]">
+									<img src={`/logos/${logo}`} alt="" />
+								</div>
+							))}
 						</div>
 						<div className="w-full md:w-1/2">
 							<img src="/logos/nftiff-logo.png" alt="" />
@@ -125,7 +113,7 @@ const Aboutpage = () => {
 				</div>
 			</div>
 			{/* ------------------------------------------------------------------------------------------ */}
-			<div className="py-16">
+			{/* <div className="py-16">
 				<div className="flex flex-col-reverse md:flex-row max-w-[1300px] mx-auto items-center justify-between px-[24px] md:px-0">
 					<div className="text-dark w-full md:w-1/2">
 						<h1 className="text-[30px] md:text-[45px] leading-[38px] md:leading-[50px]">
@@ -145,7 +133,8 @@ const Aboutpage = () => {
 						<img src="/images/contact-design.png" alt="" className=" " />
 					</div>
 				</div>
-			</div>
+			</div> */}
+			<ChainBanner />
 		</MainLayout>
 	)
 }

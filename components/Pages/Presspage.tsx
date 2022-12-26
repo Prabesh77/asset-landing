@@ -3,7 +3,6 @@ import MainLayout from "../layout/MainLayout"
 import { AiOutlineTwitter, AiOutlineInstagram } from "react-icons/ai"
 import { FaTelegramPlane } from "react-icons/fa"
 import Link from "next/link"
-import Card from "../common/Card"
 
 const Presspage = () => {
 	const [currentNews, setCurrentNews] = useState("Newer")

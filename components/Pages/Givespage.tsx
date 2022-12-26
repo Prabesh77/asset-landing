@@ -1,6 +1,44 @@
+import ChainBanner from "../common/ChainBanner"
 import MainLayout from "../layout/MainLayout"
 
 const Givespage = () => {
+	const helpExample = [
+		{
+			title: "Supporting Ukraine",
+			subtitle:
+				"Chain supports displaced communities in Ukraine by sending crypto safely and rapidly to those impacted by political unrest.",
+		},
+		{
+			title: "Working with REFORM",
+			subtitle:
+				"We support the REFORM Alliance, a non-profit organizationdedicated to probation, parole, and sentencing reform in theU.S.A.",
+		},
+		{
+			title: "COVID Support",
+			subtitle:
+				"After the 2020 pandemic, millions of people around their worldlost family members and steady income. Chain will continue to support those dealing with the after effects of COVID-19.",
+		},
+	]
+	const impacts = [
+		{
+			icon: "/icons/impactful.svg",
+			title: "Impactful",
+			subtitle:
+				"We are on a mission to help countless people around the world through donations to charitable organizations.",
+		},
+		{
+			icon: "/icons/difference-maker.svg",
+			title: "Difference Makers",
+			subtitle:
+				"We believe we can make positive impacts on individuals and families worldwide through our contributions and organizations we support.",
+		},
+		{
+			icon: "/icons/production-support.svg",
+			title: "Production support services",
+			subtitle:
+				"With the power of crypto and blockchain we can rapidly send funds to those individuals and organizations.",
+		},
+	]
 	return (
 		<MainLayout>
 			{/* ------------------------------------------------------------------------------------------------- */}
@@ -46,47 +84,22 @@ const Givespage = () => {
 				</p>
 				{/* -----------------------------------------Cards grid------------------------------- */}
 				<div className="py-24 container grid grid-cols-1 place-items-center gap-8 md:grid-cols-3 px-4 md:px-0">
-					<div className="shadow-custom3 p-6 border border-[#eaeaea] flex-grow rounded-lg min-h-[360px]">
-						<div className="h-[85px] w-[85px] bg-secondary flex items-center justify-center rounded-xl">
-							<img src="/icons/impactful.svg" alt="" />
+					{impacts?.map((impact, i) => (
+						<div
+							key={i}
+							className="shadow-custom3 p-6 border border-[#eaeaea] flex-grow rounded-lg min-h-[360px]"
+						>
+							<div className="h-[85px] w-[85px] bg-secondary flex items-center justify-center rounded-xl">
+								<img src={impact.icon} alt="" />
+							</div>
+							<div className=" mt-4 pb-16  w-[300px]">
+								<h1 className="text-[30px]  leading-7 text-dark">
+									{impact.title}
+								</h1>
+								<p className="text-[16px] mt-6">{impact.subtitle}</p>
+							</div>
 						</div>
-						<div className=" mt-4 pb-16  w-[300px]">
-							<h1 className="text-[30px]  leading-7 text-dark">Impactful</h1>
-							<p className="text-[16px] mt-6">
-								We are on a mission to help countless people around the world
-								through donations to charitable organizations.
-							</p>
-						</div>
-					</div>
-					<div className="shadow-custom3 p-6 border border-[#eaeaea] flex-grow rounded-lg min-h-[360px]">
-						<div className="h-[85px] w-[85px] bg-secondary flex items-center justify-center rounded-xl">
-							<img src="/icons/difference-maker.svg" alt="" />
-						</div>
-						<div className="  mt-4 pb-16  w-[300px]">
-							<h1 className="text-[30px]  leading-7 text-dark">
-								Difference Makers
-							</h1>
-							<p className="text-[16px] mt-6">
-								We believe we can make positive impacts on individuals and
-								families worldwide through our contributions and organizations
-								we support.
-							</p>
-						</div>
-					</div>
-					<div className="shadow-custom3 p-6 border border-[#eaeaea] flex-grow rounded-lg min-h-[360px]">
-						<div className="h-[85px] w-[85px] bg-secondary flex items-center justify-center rounded-xl">
-							<img src="/icons/production-support.svg" alt="" />
-						</div>
-						<div className="  mt-4 pb-16  w-[300px]">
-							<h1 className="text-[30px]  leading-7 text-dark">
-								Production support services
-							</h1>
-							<p className="text-[16px] mt-6">
-								With the power of crypto and blockchain we can rapidly send
-								funds to those individuals and organizations.
-							</p>
-						</div>
-					</div>
+					))}
 				</div>
 			</div>
 
@@ -102,52 +115,23 @@ const Givespage = () => {
 					traditional banks, as well as more transparent, timely, and efficient.
 				</p>
 				<div className="container mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-					<div className="bg-[#363b43] px-[35px] py-[40px] rounded-[7px]">
-						<h1 className=" text-[22px] md:text-[30px] text-primary ">Supporting Ukraine</h1>
-						<p className="text-[16px] text-secondary mt-[30px] h-32">
-							Chain supports displaced communities in Ukraine by sending crypto
-							safely and rapidly to those impacted by political unrest.
-						</p>
-					</div>
-					<div className="bg-[#363b43] px-[35px] py-[40px] rounded-[7px]">
-						<h1 className=" text-[22px] md:text-[30px] text-primary ">Working with REFORM</h1>
-						<p className="text-[16px] text-secondary mt-[30px] h-32">
-                        We support the REFORM Alliance, a non-profit 
-organization dedicated to probation, parole, 
-and sentencing reform in the U.S.A.
-						</p>
-					</div>
-					<div className="bg-[#363b43] px-[35px] py-[40px] rounded-[7px]">
-						<h1 className=" text-[22px] md:text-[30px] text-primary ">COVID Support</h1>
-						<p className="text-[16px] text-secondary mt-[30px] h-32">
-                        After the 2020 pandemic, millions of people 
-around their world lost family members and 
-steady income. Chain will continue to 
-support those dealing with the after 
-effects of COVID-19.
-						</p>
-					</div>
+					{helpExample?.map((example, i) => (
+						<div
+							key={i}
+							className="bg-[#363b43] px-[35px] py-[40px] rounded-[7px]"
+						>
+							<h1 className=" text-[22px] md:text-[30px] text-primary ">
+								{example.title}
+							</h1>
+							<p className="text-[16px] text-secondary mt-[30px] h-32">
+								{example.subtitle}
+							</p>
+						</div>
+					))}
 				</div>
 			</div>
-             {/* ------------------------------------------------------------------------------------------------- */}
-             <div className="py-16">
-				<div className="flex flex-col-reverse md:flex-row max-w-[1300px] mx-auto items-center justify-between px-[24px] md:px-0">
-					<div className="text-dark w-full md:w-1/2">
-						<h1 className="text-[30px] md:text-[45px] leading-[38px] md:leading-[50px]">
-							Connect with Chain
-						</h1>
-						<p className="text-[16px] md:text-[16px] mt-6 max-w-[400px] leading-5">
-                        Ready to build with us? Let us guide you through which 
-blockchain software service is best suited for 
-optimizing your business.
-						</p>
-						<button className="primary-btn mt-[40px]">Get in touch</button>
-					</div>
-					<div className="h-full flex items-center justify-center md:justify-end bg-red-100 w-full md:w-1/2">
-						<img src="/images/contact-design.png" alt="" className=" " />
-					</div>
-				</div>
-			</div>
+			{/* ------------------------------------------------------------------------------------------------- */}
+			<ChainBanner />
 		</MainLayout>
 	)
 }

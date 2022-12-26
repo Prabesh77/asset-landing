@@ -2,6 +2,45 @@ import React from "react"
 import MainLayout from "../layout/MainLayout"
 
 const Cloudpage = () => {
+	const features = [
+		{
+			image: "/icons/team.png",
+			title: "Free Your Team",
+			subTitle:
+				"Focus on shipping and scaling your product instead of building and maintaining blockchain infrastructure.",
+		},
+		{
+			image: "/icons/multi-chain.png",
+			title: "Multi-Chain Seamlessly",
+			subTitle:
+				"Over 20 blockchain networks available to developers to build without limits.",
+		},
+		{
+			image: "/icons/innovation.png",
+			title: "Innovation Unleashed",
+			subTitle:
+				"Build your application with ease with our blockchain RPC APIs and dedicated nodes.",
+		},
+		{
+			image: "/icons/premium.png",
+			title: "Premium Access",
+			subTitle:
+				"Chain offers a premium package to access more RPC API features with no rate limits, web sockets or  even dedicated nodes.",
+		},
+		{
+			image: "/icons/scale.png",
+			title: "Scale Effortlessly",
+			subTitle:
+				"Designed for enterprises, Chain Cloud scales as your business does.",
+		},
+		{
+			image: "/icons/business.png",
+			title: "Know Your Business",
+			subTitle:
+				"Get unmatched insights into your business with fine-grain tracking and powerful analytics with Archive Node capabilities.",
+		},
+	]
+
 	return (
 		<MainLayout>
 			<div className="md:h-[675px]">
@@ -65,18 +104,16 @@ const Cloudpage = () => {
 								API-driven dashboard with analytics
 							</p>
 							<div className="grid grid-cols-2 gap-2 mt-8">
-								<button className="bg-secondary py-2 rounded-lg text-dark text-[10px] md:text-small">
-									Balance
-								</button>
-								<button className="bg-secondary py-2 rounded-lg text-dark text-[10px] md:text-small">
-									Method Calls
-								</button>
-								<button className="bg-secondary py-2 rounded-lg text-dark text-[10px] md:text-small">
-									Request Limits
-								</button>
-								<button className="bg-secondary py-2 rounded-lg text-dark text-[10px] md:text-small">
-									Endpoint
-								</button>
+								{["Balance", "Method Calls", "Request Limits", "Endpoint"].map(
+									(val, i) => (
+										<button
+											key={i}
+											className="bg-secondary py-2 rounded-lg text-dark text-[10px] md:text-small"
+										>
+											{val}
+										</button>
+									)
+								)}
 							</div>
 						</div>
 						<div className="bg-white shadow-custom1 border border-[#eaeaea] p-[1rem] md:p-[25px] rounded-xl">
@@ -119,44 +156,14 @@ const Cloudpage = () => {
 					<h1 className="text-[30px] font-bold text-center">Features</h1>
 					<div className="mt-16">
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-20">
-							<FeatureCard
-								image="/icons/team.png"
-								title="Free Your Team"
-								subTitle="Focus on shipping and scaling your product instead 
-                                of building and maintaining blockchain infrastructure."
-							/>
-							<FeatureCard
-								image="/icons/multi-chain.png"
-								title="Multi-Chain Seamlessly"
-								subTitle="Over 20 blockchain networks available to 
-                                developers to build without limits."
-							/>
-							<FeatureCard
-								image="/icons/innovation.png"
-								title="Innovation Unleashed"
-								subTitle="Build your application with ease with our 
-                                blockchain RPC APIs and dedicated nodes."
-							/>
-							<FeatureCard
-								image="/icons/premium.png"
-								title="Premium Access"
-								subTitle="Chain offers a premium package to access more 
-                                RPC API features with no rate limits, web sockets, 
-                                or  even dedicated nodes."
-							/>
-							<FeatureCard
-								image="/icons/scale.png"
-								title="Scale Effortlessly"
-								subTitle="Designed for enterprises, Chain Cloud scales 
-                                as your business does."
-							/>
-							<FeatureCard
-								image="/icons/business.png"
-								title="Know Your Business"
-								subTitle="Get unmatched insights into your business with 
-                                fine-grain tracking and powerful analytics with 
-                                Archive Node capabilities."
-							/>
+							{features?.map((feature, i) => (
+								<FeatureCard
+									key={i}
+									image={feature.image}
+									title={feature.title}
+									subTitle={feature.subTitle}
+								/>
+							))}
 						</div>
 					</div>
 				</div>
@@ -226,7 +233,9 @@ const Cloudpage = () => {
 			</div>
 			{/* ---------------------------------------------------------------------------------------------------------------------------- */}
 			<div className="py-16">
-				<h1 className="text-[30px] md:text-[45px] text-center">Connect with Chain</h1>
+				<h1 className="text-[30px] md:text-[45px] text-center">
+					Connect with Chain
+				</h1>
 				<div className="max-w-[1300px] mx-auto flex flex-col space-y-8 md:space-y-0 md:flex-row md:space-x-16 mt-16 px-4 md:px-0">
 					<div className="w-full md:w-1/2 border border-[#eaeaea] flex flex-col p-8   items-center justify-center space-y-8 text-center">
 						<h1 className="text-[30px] md:text-[45px]">Contact Us</h1>
@@ -237,7 +246,9 @@ const Cloudpage = () => {
 						<button className="primary-btn">Get in touch</button>
 					</div>
 					<div className="w-full md:w-1/2 border border-[#eaeaea] flex flex-col text-center p-8 items-center justify-center space-y-8">
-						<h1 className="text-[30px] md:text-[45px]">Latest news & updates</h1>
+						<h1 className="text-[30px] md:text-[45px]">
+							Latest news & updates
+						</h1>
 						<p className="text-[16px] md:text-[16px]">
 							Sign up for the Chain Newsletter - a weekly roundup of new
 							platform features and the latest from the industry.

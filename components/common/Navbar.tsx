@@ -174,7 +174,7 @@ const Navbar = () => {
 				<div className="container mx-auto h-full">
 					<div className="z-50 border border-bottom-secondary px-4 flex items-center justify-between h-full h-16">
 						<div className="w-24">
-							<img src="/logo.svg" />
+							<Link href="/"><img src="/logo.svg" /></Link>
 						</div>
 						<div>
 							{isMenuOpen ? (
