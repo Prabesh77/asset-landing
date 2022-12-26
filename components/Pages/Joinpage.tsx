@@ -1,7 +1,23 @@
 import MainLayout from "../layout/MainLayout"
 
 const Joinpage = () => {
-	const ourInfo = 	[{title: 'Our Values', subtitle: 'Be patient. Be kind. Have grit. Ask why. Do the right thing. We want to improve the culture of financial services and we will turn down opportunities and revenue if it requires compromising what we believe.'}, {title: "Our Benefits", subtitle: "People do their best work when they’re happy and healthy, so we take care of our team members with full benefits, optional crypto payments, unlimited PTO, parental leave, and competitivecompensation packages."}, {title: "Our Location", subtitle: "We work remotely in the comfort of our own homes or offices with the benefit of a stroll in the park / on the beach sometimes too. Our remote-first policies give a true meaning to decentralization."}]
+	const ourInfo = [
+		{
+			title: "Our Values",
+			subtitle:
+				"Be patient. Be kind. Have grit. Ask why. Do the right thing. We want to improve the culture of financial services and we will turn down opportunities and revenue if it requires compromising what we believe.",
+		},
+		{
+			title: "Our Benefits",
+			subtitle:
+				"People do their best work when they’re happy and healthy, so we take care of our team members with full benefits, optional crypto payments, unlimited PTO, parental leave, and competitivecompensation packages.",
+		},
+		{
+			title: "Our Location",
+			subtitle:
+				"We work remotely in the comfort of our own homes or offices with the benefit of a stroll in the park / on the beach sometimes too. Our remote-first policies give a true meaning to decentralization.",
+		},
+	]
 	return (
 		<MainLayout>
 			<div className="py-16">
@@ -36,19 +52,22 @@ const Joinpage = () => {
 					for the challenge?
 				</p>
 				<div className="container mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-					{ourInfo?.map((info, i) => <div key={i} className="bg-[#363b43] px-[35px] py-[40px] rounded-[7px]">
-						<h1 className=" text-[22px] md:text-[30px] text-primary ">
-							Our Values
-						</h1>
-						<p className="text-[16px] text-secondary mt-[30px] h-32">
-							Be patient. Be kind. Have grit. Ask why. Do the right thing. We
-							want to improve the culture of financial services and we will turn
-							down opportunities and revenue if it requires compromising what we
-							believe.
-						</p>
-					</div>)}
-				
-					
+					{ourInfo?.map((info, i) => (
+						<div
+							key={i}
+							className="bg-[#363b43] px-[35px] py-[40px] rounded-[7px]"
+						>
+							<h1 className=" text-[22px] md:text-[30px] text-primary ">
+								Our Values
+							</h1>
+							<p className="text-[16px] text-secondary mt-[30px] h-32">
+								Be patient. Be kind. Have grit. Ask why. Do the right thing. We
+								want to improve the culture of financial services and we will
+								turn down opportunities and revenue if it requires compromising
+								what we believe.
+							</p>
+						</div>
+					))}
 				</div>
 			</div>
 		</MainLayout>

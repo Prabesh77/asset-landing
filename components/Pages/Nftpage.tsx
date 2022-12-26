@@ -3,6 +3,96 @@ import ChainBanner from "../common/ChainBanner"
 import MainLayout from "../layout/MainLayout"
 
 const Nftpage = () => {
+	const platformSupports = [
+		{
+			icon: "/icons/app-dev.png",
+			title: "Application development",
+			subtitle:
+				"Partner with Chain’s expert NFT development team on everything from designs to production solutions.",
+		},
+		{
+			icon: "/icons/integration.png",
+			title: "Integration engineering",
+			subtitle:
+				"A team of specialists is available to help in all stages of the NFT launch, including compliance reviews, crypto to fiat conversions, and more.",
+		},
+		{
+			icon: "/icons/SLAs.png",
+			title: "SLAs and 24/7 On-Call",
+			subtitle:
+				"Contractual commitments for reliability with on-call teams standing by to troubleshoot and resolve any and all issues.",
+		},
+	]
+
+	const steps = [
+		{
+			step: "01",
+			title: "CONCEPT",
+			content: [
+				" Identify market opportunity",
+				"Conduct research",
+				"Define project milestones",
+				"Develop strategy",
+			],
+		},
+
+		{
+			step: "02",
+			title: "DESIGN",
+			content: [
+				" Create moodboard",
+				"Present client with a selection of design studies",
+				"Prototype",
+				"Finalize design direction",
+			],
+		},
+
+		{
+			step: "03",
+			title: "PRODUCTION",
+			content: [
+				"Creation of digital assets",
+				"Build an NTF Gateway hosted on Chain managed blockchain/interoperable with other networks.",
+				"UX/UI",
+				"Present for client feedback",
+				"Make final revisions",
+				"Build supporting product knowledge materials & train client team members",
+			],
+		},
+
+		{
+			step: "04",
+			title: "IMPLEMENTATION",
+			content: [
+				"Program launch",
+				"Execute marketing campaigns",
+				"Mint",
+				"Data collection",
+				"Security",
+			],
+		},
+
+		{
+			step: "05",
+			title: "SUPPORT",
+			content: [
+				"Continued site maintenance",
+				"Payment management and processing",
+				"Dedicated Chain NFT support team member",
+			],
+		},
+
+		{
+			step: "06",
+			title: "DELIVERY",
+			content: [
+				"Track Shipment",
+				"Deliver physical item",
+				"Pair to NFT",
+				"Continued client support",
+			],
+		},
+	]
 	return (
 		<MainLayout>
 			<div className="py-20">
@@ -88,68 +178,13 @@ const Nftpage = () => {
 						stage they’re at in their process.
 					</p>
 					<div className="grid grid-cols-1 place-items-center md:grid-cols-3 gap-8 mt-16">
-						<StepCard
-							step="01"
-							title="CONCEPT"
-							content={[
-								" Identify market opportunity",
-								"Conduct research",
-								"Define project milestones",
-								"Develop strategy",
-							]}
-						/>
-						<StepCard
-							step="02"
-							title="DESIGN"
-							content={[
-								" Create moodboard",
-								"Present client with a selection of design studies",
-								"Prototype",
-								"Finalize design direction",
-							]}
-						/>
-						<StepCard
-							step="03"
-							title="PRODUCTION"
-							content={[
-								"Creation of digital assets",
-								"Build an NTF Gateway hosted on Chain managed blockchain/interoperable with other networks.",
-								"UX/UI",
-								"Present for client feedback",
-								"Make final revisions",
-								"Build supporting product knowledge materials & train client team members",
-							]}
-						/>
-						<StepCard
-							step="04"
-							title="IMPLEMENTATION"
-							content={[
-								"Program launch",
-								"Execute marketing campaigns",
-								"Mint",
-								"Data collection",
-								"Security",
-							]}
-						/>
-						<StepCard
-							step="05"
-							title="SUPPORT"
-							content={[
-								"Continued site maintenance",
-								"Payment management and processing",
-								"Dedicated Chain NFT support team member",
-							]}
-						/>
-						<StepCard
-							step="06"
-							title="DELIVERY"
-							content={[
-								"Track Shipment",
-								"Deliver physical item",
-								"Pair to NFT",
-								"Continued client support",
-							]}
-						/>
+						{steps?.map((step, i) => (
+							<StepCard
+								step={step.step}
+								title={step.title}
+								content={step.content}
+							/>
+						))}
 					</div>
 				</div>
 			</div>
@@ -164,45 +199,18 @@ const Nftpage = () => {
 						deployment and operational support.
 					</p>
 					<div className="grid grid-cols-1 place-items-center md:grid-cols-3 gap-8 mt-16">
-						<div className="bg-white p-[45px] h-[390px] max-w-[350px] rounded-[7px]">
-							<img src="/icons/app-dev.png" alt="" />
-							<h1 className="text-[20px] font-bold my-6">
-								Application development
-							</h1>
-							<p className="text-[16px]">
-								Partner with Chain’s expert NFT development team on everything
-								from designs to production solutions.
-							</p>
-						</div>
-						<div className="bg-white p-[45px] h-[390px] max-w-[350px] rounded-[7px]">
-							<img src="/icons/integration.png" alt="" />
-							<h1 className="text-[20px] font-bold my-6">
-                            Integration engineering
-							</h1>
-							<p className="text-[16px]">
-                            A team of specialists is available to help 
-in all stages of the NFT launch, including 
-compliance reviews, crypto to fiat 
-conversions, and more.
-							</p>
-						</div>
-						<div className="bg-white p-[45px] h-[390px] max-w-[350px] rounded-[7px]">
-							<img src="/icons/SLAs.png" alt="" />
-							<h1 className="text-[20px] font-bold my-6">
-                            SLAs and 24/7 On-Call
-							</h1>
-							<p className="text-[16px]">
-                            Contractual commitments for reliability 
-with on-call teams standing by to 
-troubleshoot and resolve any and 
-all issues.
-							</p>
-						</div>
+						{platformSupports?.map((support, i) => (
+							<div className="bg-white p-[45px] h-[390px] max-w-[350px] rounded-[7px]">
+								<img src={support.icon} alt="" />
+								<h1 className="text-[20px] font-bold my-6">{support.title}</h1>
+								<p className="text-[16px]">{support.subtitle}</p>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>
-            {/* ------------------------------------------------------------------------------------------------- */}
-            <ChainBanner />
+			{/* ------------------------------------------------------------------------------------------------- */}
+			<ChainBanner />
 		</MainLayout>
 	)
 }

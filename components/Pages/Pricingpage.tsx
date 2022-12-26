@@ -3,6 +3,76 @@ import { AiOutlineInfoCircle } from "react-icons/ai"
 import ChainBanner from "../common/ChainBanner"
 
 const Pricingpage = () => {
+	const features = [
+		{
+			title: "Top Blockchains",
+			subtitle:
+				"Instant access to full nodes of more than 40 commonly used cryptos in one space",
+		},
+		{
+			title: "High Speed",
+			subtitle:
+				"Fast and reliable API with low response time and network bandwidth at 1 GB/sec",
+		},
+		{
+			title: "Rate Limits",
+			subtitle:
+				"Maximum 30 requests/sec. Overall usage can affect the rate limits (autoscaling)",
+		},
+		{
+			title: "Advanced Analytics",
+			subtitle:
+				"API-driven dashboard shows valuable insights on the number of requests, statistics on method calls and more",
+		},
+		{
+			title: "Full Archive Data",
+			subtitle:
+				"Access to historical data and balances on several blockchains. Please, contact our customer support managers to get the actual info",
+		},
+		{
+			title: "24 Hour Support",
+			subtitle:
+				"Helpful consulting and technical support is provided by our highly-skilled team of experts",
+		},
+	]
+
+	const pricing = [
+		{ title: "Free", price: 0, expiration: "no expiration", requests: "40k" },
+
+		{
+			title: "Newbie",
+			price: 6,
+			expiration: "no expiration date",
+			requests: "500k",
+		},
+
+		{ title: "Lite", price: 10, expiration: "no expiration", requests: "1M" },
+
+		{ title: "Base", price: 30, expiration: "no expiration", requests: "5M" },
+
+		{
+			title: "Popular",
+			price: 50,
+			expiration: "Per Day",
+			requests: "10M",
+			dark: true,
+		},
+
+		{
+			title: "Unlimited",
+			price: 200,
+			expiration: "no expiration",
+			requests: "50M ",
+		},
+
+		{
+			title: "Unlimited",
+			price: 500,
+			expiration: "no expiration",
+			requests: "Unlimited ",
+		},
+	]
+
 	return (
 		<MainLayout>
 			{/* ------------------------------------------------------------------------------------------------- */}
@@ -33,49 +103,16 @@ const Pricingpage = () => {
 					budgets and company sizes.
 				</p>
 				<div className="container grid md:grid-cols-4 gap-8 items-start place-items-center mt-16">
-					<PricingCard
-						title="Free"
-						price={0}
-						expiration="no expiration"
-						requests="40k"
-					/>
-					<PricingCard
-						title="Newbie"
-						price={6}
-						expiration="no expiration date"
-						requests="500k"
-					/>
-					<PricingCard
-						title="Lite"
-						price={10}
-						expiration="no expiration"
-						requests="1M"
-					/>
-					<PricingCard
-						title="Base"
-						price={30}
-						expiration="no expiration"
-						requests="5M"
-					/>
-					<PricingCard
-						title="Popular"
-						price={50}
-						expiration="Per Day"
-						requests="10M"
-						dark={true}
-					/>
-					<PricingCard
-						title="Unlimited"
-						price={200}
-						expiration="no expiration"
-						requests="50M "
-					/>
-					<PricingCard
-						title="Unlimited"
-						price={500}
-						expiration="no expiration"
-						requests="Unlimited "
-					/>
+					{pricing?.map((price, i) => (
+						<PricingCard
+							title={price.title}
+							price={price.price}
+							expiration={price.expiration}
+							requests={price.requests}
+							dark={price?.dark || false}
+						/>
+					))}
+
 					<div
 						className={`shadow-custom4 border border-[#eaeaea] text-center p-[35px] rounded-[7px] relative bg-dark `}
 					>
@@ -114,12 +151,13 @@ const Pricingpage = () => {
 					Powered by a Full Set of Features
 				</h1>
 				<div className="container grid grid-cols-1 md:grid-cols-3 gap-8 place-items-center mt-16">
-					<FeatureCard title="Top Blockchains" subtitle="Instant access to full nodes of more than 40 commonly used cryptos in one space"/>
-					<FeatureCard title="High Speed" subtitle="Fast and reliable API with low response time and network bandwidth at 1 GB/sec"/>
-					<FeatureCard title="Rate Limits" subtitle="Maximum 30 requests/sec. Overall usage can affect the rate limits (autoscaling)"/>
-					<FeatureCard title="Advanced Analytics" subtitle="API-driven dashboard shows valuable insights on the number of requests, statistics on method calls and more"/>
-					<FeatureCard title="Full Archive Data" subtitle="Access to historical data and balances on several blockchains. Please, contact our customer support managers to get the actual info"/>
-					<FeatureCard title="24 Hour Support" subtitle="Helpful consulting and technical support is provided by our highly-skilled team of experts"/>
+					{features?.map((feature, i) => (
+						<FeatureCard
+							key={i}
+							title={feature.title}
+							subtitle={feature.subtitle}
+						/>
+					))}
 				</div>
 			</div>
 			{/* ------------------------------------------------------------------------------------------------- */}
@@ -171,17 +209,21 @@ const PricingCard = ({
 	)
 }
 
-const FeatureCard = ({title, subtitle}: {title: string, subtitle: string}) => {
-    return(
-        <div className="shadow-custom4 rounded-[7px] px-[26px] py-[55px] border border-[#eaeaea]">
-						<h1 className="border-b border-[#eaeaea] text-[25px] font-bold text-primary py-2 ">
-							{title}
-						</h1>
-						<p className="text-[16px] mt-4">
-							{subtitle}
-						</p>
-					</div>
-    )
+const FeatureCard = ({
+	title,
+	subtitle,
+}: {
+	title: string
+	subtitle: string
+}) => {
+	return (
+		<div className="shadow-custom4 rounded-[7px] px-[26px] py-[55px] border border-[#eaeaea]">
+			<h1 className="border-b border-[#eaeaea] text-[25px] font-bold text-primary py-2 ">
+				{title}
+			</h1>
+			<p className="text-[16px] mt-4">{subtitle}</p>
+		</div>
+	)
 }
 
 export default Pricingpage

@@ -76,8 +76,8 @@ const Aboutpage = () => {
 					</h1>
 					<div className="bg-white w-full mt-16 md:px-[35px] px-[1rem] py-16 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-16 rounded-xl">
 						<div className="w-full md:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-8">
-							{logos?.map((logo) => (
-								<div className="h-[55px] max-w-[149px] border border-[#eaeaea] hover:border-primary flex items-center justify-center rounded-[7px]">
+							{logos?.map((logo, i) => (
+								<div key={i} className="h-[55px] max-w-[149px] border border-[#eaeaea] hover:border-primary flex items-center justify-center rounded-[7px]">
 									<img src={`/logos/${logo}`} alt="" />
 								</div>
 							))}

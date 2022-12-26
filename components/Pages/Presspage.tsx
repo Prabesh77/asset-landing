@@ -6,6 +6,61 @@ import Link from "next/link"
 
 const Presspage = () => {
 	const [currentNews, setCurrentNews] = useState("Newer")
+
+	const smallGridNews = [
+		{
+			image: "/images/img-2.png",
+			tag: "Press",
+			title:
+				"Chain Announces Multi-Year Partnership with Kraft Sports + Entertainment",
+			date: "Thu Sep 22 2022",
+			link: "#",
+		},
+
+		{
+			image: "/images/img-3.png",
+			tag: "Product",
+			title: "Coinbase Launches 'Learn-to-Earn' Campaign with Chain (XCN)",
+			date: "Thu Sep 22 2022",
+			link: "#",
+		},
+
+		{
+			image: "/images/img-4.png",
+			tag: "Research",
+			title:
+				"Chain Research – The Significance of ENS Domain Names and Their Use Cases",
+			date: "Thu Sep 22 2022",
+			link: "#",
+		},
+
+		{
+			image: "/images/img-2.png",
+			tag: "Press",
+			title:
+				"Chain Announces Multi-Year Partnership with Kraft Sports + Entertainment",
+			date: "Thu Sep 22 2022",
+			link: "#",
+		},
+
+		{
+			image: "/images/img-3.png",
+			tag: "Product",
+			title: "Coinbase Launches 'Learn-to-Earn' Campaign with Chain (XCN)",
+			date: "Thu Sep 22 2022",
+			link: "#",
+		},
+
+		{
+			image: "/images/img-4.png",
+			tag: "Research",
+			title:
+				"Chain Research – The Significance of ENS Domain Names and Their Use Cases",
+			date: "Thu Sep 22 2022",
+			link: "#",
+		},
+	]
+
 	return (
 		<MainLayout>
 			<div className="py-20">
@@ -104,6 +159,7 @@ const Presspage = () => {
 				</div>
 				<div className="bg-dark mt-32">
 					<div className="container transform -translate-y-16 px-4 md:px-0">
+						{/* Large HIGHLIGHTED news card */}
 						<div className="shadow-custom rounded-[7px]">
 							<div className="w-full py-20 md:py-40 px-10 md:px-24 bg-[#454C56] flex flex-col justify-center rounded-[7px] oveflow-hidden">
 								<div className="flex items-center space-x-4">
@@ -141,49 +197,18 @@ const Presspage = () => {
 							</div>
 						</div>
 						<div className="grid grid-cols-1  w-full place-items-center md:grid-cols-3 gap-[35px] mt-[62px]">
-							<NewsCard
-								image="/images/img-2.png"
-								tag="Press"
-								title="Chain Announces Multi-Year Partnership with Kraft Sports + Entertainment"
-								date="Thu Sep 22 2022"
-								link="#"
-							/>
-							<NewsCard
-								image="/images/img-3.png"
-								tag="Product"
-								title="Coinbase Launches 'Learn-to-Earn' Campaign with Chain (XCN)"
-								date="Thu Sep 22 2022"
-								link="#"
-							/>
-							<NewsCard
-								image="/images/img-4.png"
-								tag="Research"
-								title="Chain Research – The Significance of ENS Domain Names and Their Use Cases"
-								date="Thu Sep 22 2022"
-								link="#"
-							/>
-							<NewsCard
-								image="/images/img-2.png"
-								tag="Press"
-								title="Chain Announces Multi-Year Partnership with Kraft Sports + Entertainment"
-								date="Thu Sep 22 2022"
-								link="#"
-							/>
-							<NewsCard
-								image="/images/img-3.png"
-								tag="Product"
-								title="Coinbase Launches 'Learn-to-Earn' Campaign with Chain (XCN)"
-								date="Thu Sep 22 2022"
-								link="#"
-							/>
-							<NewsCard
-								image="/images/img-4.png"
-								tag="Research"
-								title="Chain Research – The Significance of ENS Domain Names and Their Use Cases"
-								date="Thu Sep 22 2022"
-								link="#"
-							/>
+							{smallGridNews?.map((news, i) => (
+								<NewsCard
+									key={i}
+									image={news.image}
+									tag={news.tag}
+									title={news.title}
+									date={news.date}
+									link={news.link}
+								/>
+							))}
 						</div>
+						{/* Two grid news card */}
 						<div className="grid grid-cols-1 place-items-center md:grid-cols-2 gap-8 mt-8">
 							<NewsCard
 								image="/images/img-2.png"
@@ -208,45 +233,70 @@ const Presspage = () => {
 					</div>
 				</div>
 			</div>
-            {/* ======================================================================================================================= */}
-            <div className="py-20 bg-secondary">
-                <h1 className="text-[25px] md:text-[30px] font-bold text-center">Brand Assets</h1>
-                <p className="text-center mt-4">Download official Chain logos</p>
-                <div className="max-w-[1000px] mx-auto justify-center flex flex-col md:flex-row items-center space-y-16 md:space-y-0 md:space-x-8 mt-16 px-4 md:px-0">
-                    <div>
-                        <p className="text-[20px] font-bold text-dark text-center">Full logo for darker backgrounds</p>
-                        <div className="bg-dark p-16 rounded-[7px] my-8">
-                            <img src="/logos/chain-white-logo.svg" alt=""/>
-                        </div>
-                        <button className="primary-btn w-full">Download</button>
-                    </div>
-                    <div>
-                        <p className="text-[20px] font-bold text-dark text-center">Full logo for darker backgrounds</p>
-                        <div className="bg-white p-16 rounded-[7px] my-8">
-                            <img src="/logos/chain-black-logo.svg" alt=""/>
-                        </div>
-                        <button className="primary-btn w-full">Download</button>
-                    </div>
-                </div>
-            </div>
-            {/* ============================================================================================================================ */}
-            <div className="flex flex-col md:flex-row space-y-16 md:space-y-0 px-4 md:px-0 items-center justify-center md:space-x-16 max-w-[1000px] mx-auto py-24">
-                <div className="border border-[#eaeaea] p-8 md:p-16 w-full md:w-1/2">
-                    <h1 className="text-[30px] font-bold">Chain in on a mission</h1>
-                    <p className="text-[16px] mt-6 leading-5">The internet has transformed the way money moves around the world, 
-but our underlying financial systems were built for an era long gone. 
-Updating them with cryptographic integrity is a huge undertaking. 
-Up for the challenge?</p>
-                </div>
-                <div className="border border-[#eaeaea] p-8 md:p-16 w-full md:w-1/2">
-                    <h1 className="text-[30px] font-bold">Preferred links</h1>
-                    <div className="flex-col space-y-4 mt-6">
-                        <div className="flex items-center space-x-4"><img src="/icons/gray-chain-icon.svg" alt=""/><span><Link href="https://chain.com">https://chain.com</Link></span></div>
-                        <div className="flex items-center space-x-4"><img src="/icons/gray-twitter-icon.svg" alt=""/><span><Link href="https://twitter.com/chain">https://twitter.com/chain</Link></span></div>
-                        <div className="flex items-center space-x-4"><img src="/icons/gray-telegram-icon.svg" alt=""/><span><Link href="https://t.me/Chain">https://t.me/Chain</Link></span></div>
-                    </div>
-                </div>
-            </div>
+			{/* ======================================================================================================================= */}
+			<div className="py-20 bg-secondary">
+				<h1 className="text-[25px] md:text-[30px] font-bold text-center">
+					Brand Assets
+				</h1>
+				<p className="text-center mt-4">Download official Chain logos</p>
+				<div className="max-w-[1000px] mx-auto justify-center flex flex-col md:flex-row items-center space-y-16 md:space-y-0 md:space-x-8 mt-16 px-4 md:px-0">
+					<div>
+						<p className="text-[20px] font-bold text-dark text-center">
+							Full logo for darker backgrounds
+						</p>
+						<div className="bg-dark p-16 rounded-[7px] my-8">
+							<img src="/logos/chain-white-logo.svg" alt="" />
+						</div>
+						<button className="primary-btn w-full">Download</button>
+					</div>
+					<div>
+						<p className="text-[20px] font-bold text-dark text-center">
+							Full logo for darker backgrounds
+						</p>
+						<div className="bg-white p-16 rounded-[7px] my-8">
+							<img src="/logos/chain-black-logo.svg" alt="" />
+						</div>
+						<button className="primary-btn w-full">Download</button>
+					</div>
+				</div>
+			</div>
+			{/* ============================================================================================================================ */}
+			<div className="flex flex-col md:flex-row space-y-16 md:space-y-0 px-4 md:px-0 items-center justify-center md:space-x-16 max-w-[1000px] mx-auto py-24">
+				<div className="border border-[#eaeaea] p-8 md:p-16 w-full md:w-1/2">
+					<h1 className="text-[30px] font-bold">Chain in on a mission</h1>
+					<p className="text-[16px] mt-6 leading-5">
+						The internet has transformed the way money moves around the world,
+						but our underlying financial systems were built for an era long
+						gone. Updating them with cryptographic integrity is a huge
+						undertaking. Up for the challenge?
+					</p>
+				</div>
+				<div className="border border-[#eaeaea] p-8 md:p-16 w-full md:w-1/2">
+					<h1 className="text-[30px] font-bold">Preferred links</h1>
+					<div className="flex-col space-y-4 mt-6">
+						<div className="flex items-center space-x-4">
+							<img src="/icons/gray-chain-icon.svg" alt="" />
+							<span>
+								<Link href="https://chain.com">https://chain.com</Link>
+							</span>
+						</div>
+						<div className="flex items-center space-x-4">
+							<img src="/icons/gray-twitter-icon.svg" alt="" />
+							<span>
+								<Link href="https://twitter.com/chain">
+									https://twitter.com/chain
+								</Link>
+							</span>
+						</div>
+						<div className="flex items-center space-x-4">
+							<img src="/icons/gray-telegram-icon.svg" alt="" />
+							<span>
+								<Link href="https://t.me/Chain">https://t.me/Chain</Link>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</MainLayout>
 	)
 }
